@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,14 @@
     <style>
         body {
             background-color: rgb(143, 174, 252); /* Color azul */
+        }
+        .cuadro {
+            border: 3px solid #007bff; /* Borde azul */
+            border-radius: 15px; /* Esquinas redondeadas */
+            padding: 30px; /* Espaciado interno */
+            max-width: 800px; /* Ancho máximo */
+            margin: auto; /* Centrado en la página */
+            background-color: #f8f9fa; /* Fondo gris claro */
         }
     </style>
 </head>
@@ -24,7 +32,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="Mipaginaweb.html">Acerca de mi</a>
+                    <a class="nav-link active" aria-current="page" href="Mipaginaweb.html">Acerca de mí</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Git.html">Git</a>
@@ -32,11 +40,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="Presentacion.html">Presentación</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="VR.html">VR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Investigacion.html">Investigacion</a>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <h1 class="display-1 text-center mt-5">Me llamo: Omar Reyes Gonzalez</h1>
+    <!-- Título dentro de un cuadro -->
+    <div class="cuadro text-center mt-5">
+        <h1 class="display-1">Me llamo: Omar Reyes Gonzalez</h1>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
