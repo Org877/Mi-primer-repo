@@ -36,7 +36,7 @@
     <h1>Juego del Ahorcado</h1>
     <!-- Mostrar la palabra oculta -->
     <div class="word" id="wordDisplay">_ _ _ _ _ _ _ _ _ _ _</div>
-    <!-- Input para letras -->
+    <!-- espacio para letras -->
     <input type="text" id="letterInput" maxlength="1" placeholder="Ingresa una letra">
     <button onclick="adivinarLetra()">Adivinar</button>
     <!-- Mensajes para el jugador -->
@@ -44,7 +44,7 @@
 
     <script>
         // Palabra secreta a adivinar
-        const palabraSecreta = "programacion"; // Puede cambiarse para probar otras palabras
+        const palabraSecreta = "sistemas"; // Puede cambiarse para probar otras palabras
         let letrasAdivinadas = []; // Letras que el jugador ha adivinado
         let intentosRestantes = 6; // Número máximo de intentos
 
