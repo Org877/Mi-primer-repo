@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Galería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgb(143, 174, 252); /* Fondo azul */
+        }
+        .btn-volver {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .gallery-container {
+            margin-top: 50px;
+        }
+        .gallery img {
+            max-height: 300px; /* Altura máxima para que las imágenes sean consistentes */
+            object-fit: cover; /* Ajustar contenido de la imagen */
+        }
+        .info-container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón para volver -->
+    <button onclick="window.location.href='index.html'" class="btn btn-danger btn-volver">Volver</button>
+
+    <!-- Contenedor de la galería -->
+    <div class="container gallery-container text-center">
+        <h1 class="mb-4">Mi aplicación</h1>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <img src="assets/Captura de pantalla 2024-11-27 151242.png" alt="Imagen 1" class="img-fluid rounded shadow gallery">
+            </div>
+            <div class="col-md-4">
+                <img src="assets/Captura de pantalla 2024-11-27 151302.png" alt="Imagen 2" class="img-fluid rounded shadow gallery">
+            </div>
+            <div class="col-md-4">
+                <img src="assets/Captura de pantalla 2024-11-27 151233.png" alt="Imagen 3" class="img-fluid rounded shadow gallery">
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de información sobre FlutterFlow y Firebase -->
+    <div class="container info-container">
+        <h2>¿Qué es FlutterFlow?</h2>
+        <p>
+            **FlutterFlow** es una plataforma visual que permite crear aplicaciones móviles  sin necesidad de escribir mucho código. Utiliza **Flutter** como el framework de Google, para crear aplicaciones nativas para Android, iOS y web.  Ademas de que  permite a los usuarios diseñar interfaces de usuario mediante un sistema de arrastrar y soltar, acelerando el desarrollo de aplicaciones. Además, permite la integración fácil con **Firebase** para gestionar bases de datos, autenticación y más.
+        </p>
+
+        <h2>¿Qué es Firebase?</h2>
+        <p>
+            **Firebase** es una plataforma de desarrollo de aplicaciones que ofrece una variedad de servicios como bases de datos en tiempo real, autenticación de usuarios, almacenamiento de archivos y notificaciones push.
+    </div>
+
+    <!-- Carga de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
