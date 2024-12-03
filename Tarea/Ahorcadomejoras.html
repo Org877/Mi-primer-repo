@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Estilo básico para la página */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            color: #333;
+            margin-top: 30px;
+        }
+        /* Estilo para la palabra oculta */
+        .word {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        /* Estilo para los mensajes */
+        .message {
+            color: red;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header class="mb-4">
+        <button onclick="window.location.href='index.html'" 
+                class="btn btn-danger animate__animated animate__fadeInLeft btn-volver">
+            Volver
+        </button>
+    </header>
+    <h1>Juego del Ahorcado</h1>
+    <!-- Mostrar la palabra oculta -->
+    <div class="word" id="wordDisplay">_ _ _ _ _ _ _ _ _ _ _</div>
+    <!-- espacio para letras -->
+    <input type="text" id="letterInput" maxlength="1" placeholder="Ingresa una letra">
+    <button onclick="adivinarLetra()">Adivinar</button>
+    <!-- Mensajes para el jugador -->
+    <div class="message" id="message"></div>
+
+    <script>
+        // Palabra secreta a adivinar
+        const palabraSecreta = "sistemas"; // Puede cambiarse para probar otras palabras
+        let letrasAdivinadas = []; // Letras que el jugador ha adivinado
+        let intentosRestantes = 6; // Número máximo de intentos
+
+        // Mostrar la palabra oculta
+        function mostrarPalabra() {
+            let palabraMostrada = "";
+            for (let letra of palabraSecreta) {
+                if (letrasAdivinadas.includes(letra)) {
+                    palabraMostrada += letra + " ";
+                } else {
+                    palabraMostrada += "_ ";
+                }
+            }
+            document.getElementById("wordDisplay").innerText = palabraMostrada.trim();
+        }
+
+        // Función para adivinar una letra
+        function adivinarLetra() {
+            const letra = document.getElementById("letterInput").value.toLowerCase();
+            document.getElementById("letterInput").value = ""; // Limpiar el input
+
+            // Verificar si ya se adivinó esa letra
+            if (letrasAdivinadas.includes(letra)) {
+                document.getElementById("message").innerText = "¡Ya intentaste con esa letra!";
+                return;
+            }
+
+            letrasAdivinadas.push(letra);
+
+            // Verificar si la letra es correcta
+            if (!palabraSecreta.includes(letra)) {
+                intentosRestantes--;
+            }
+
+            // Actualizar la palabra en pantalla
+            mostrarPalabra();
+
+            // Verificar si ganó o perdió
+            if (intentosRestantes <= 0) {
+                document.getElementById("message").innerText = "Perdiste. La palabra era: " + palabraSecreta;
+            } else if (!document.getElementById("wordDisplay").innerText.includes("_")) {
+                document.getElementById("message").innerText = "¡Ganaste!";
+            } else {
+                document.getElementById("message").innerText = "Intentos restantes: " + intentosRestantes;
+            }
+        }
+
+        // Inicializar el juego al cargar la página
+        mostrarPalabra();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
